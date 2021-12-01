@@ -8,7 +8,7 @@ function WaitingRoom() {
     const [title, setTitle] = useState('')
 
     useEffect(() => {
-        if (queue != null) {
+        if (queue != null && user != null && queue.length) {
             if (queue[0].customer_email === user.customer_email) {
                 setTitle('Sani galing keldi')
             } else {
@@ -23,7 +23,7 @@ function WaitingRoom() {
         } else {
             setTitle('Iltimos joy olish uchun bosh saxifaga o`ting')
         }
-    }, [user])
+    }, [queue])
 
     return (
         <>
